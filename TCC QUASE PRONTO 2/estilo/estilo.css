@@ -64,7 +64,6 @@ body {
     width: 100%;
     max-width: 600px;
     border-radius: 15px;
-    border: 4px solid #1E90FF;
   }
  
   .slogan {
@@ -95,17 +94,32 @@ body {
     padding: 40px 20px;
     flex-wrap: wrap;
   }
- 
-  .card {
-    text-align: center;
-    max-width: 220px;
-  }
- 
-  .card img {
+
+ /*categorias*/
+ .imagem__crianca img {
     width: 100%;
     border-radius: 10px;
     margin-bottom: 10px;
+    text-align: center;
+    max-width: 450px;
   }
+
+  .pessoas__carentes img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    max-width: 450px;
+  }
+
+  .desastre__natural img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    max-width: 450px;
+  }
+
  
   .chamada {
     background: #f2f2f2;
