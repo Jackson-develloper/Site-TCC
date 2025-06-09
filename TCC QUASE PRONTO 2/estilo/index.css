@@ -45,6 +45,13 @@ body {
     border-radius: 20px;
     font-weight: 600;
   }
+  .Voltar{
+     padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600px;
+
+
+  }
  
   .btn.doar {
     background-color: orange;
@@ -62,7 +69,8 @@ body {
  
   .hero-img {
     width: 100%;
-    max-width: 600px;
+    max-width: 5500px;
+    height: 500px;
     border-radius: 15px;
   }
  
