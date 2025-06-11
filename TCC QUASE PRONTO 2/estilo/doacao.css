@@ -5,6 +5,15 @@ body {
     color: #333;
   }
   
+      
+  header {
+    text-align: center;
+    background: #fff;    padding: 10px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+
+  
   .top-header {
     background-color: white;
     padding: 20px;
