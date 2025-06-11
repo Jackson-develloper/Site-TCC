@@ -2,12 +2,16 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
+<<<<<<< HEAD
     background-color: white;
+=======
+    background-color:#f0eeee;
+>>>>>>> 707d98facb62739ddc1dfcd48d7c02b81084ac6f
     color: #333;
   }
  
   header {
-    background: #fff;
+    background: #ffffff;
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
