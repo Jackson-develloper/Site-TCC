@@ -2,7 +2,7 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background-color:#f0eeee;
+    background-color:#ffffff;
     color: #333;
   }
  
@@ -190,6 +190,10 @@ body {
     margin: 10px;
   }
  
+
+.icon_insta{
+  width: 24px;
+}
   footer .social a img {
     width: 24px;
     margin: 0 5px;
