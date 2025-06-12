@@ -2,22 +2,10 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-<<<<<<< HEAD
-<<<<<<< HEAD
+
     background-color:#ffffff;
-=======
-<<<<<<< HEAD
-    background-color: white;
-=======
-    background-color:#f0eeee;
->>>>>>> 707d98facb62739ddc1dfcd48d7c02b81084ac6f
->>>>>>> 2692fd4f1ca35962c52c83f8436105278016414a
-=======
-    background-color: white;
 
-    background-color: white;
 
->>>>>>> d9545607b74fdd4b5024a43f552909c3df112dcc
     color: #333;
   }
  
@@ -208,27 +196,13 @@ body {
 
 .icon_insta{
   width: 24px;
+  
+ 
 }
-  footer .social a img {
+   .social {
     width: 24px;
     margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
   }
-
-  @media (min-width: 1024px) and (max-width: 1440px) {
-            .container {
-                width: 80%;
-            }
-            .card {
-                padding: 20px;
-            }
-        }
-        @media (max-width: 1023px) {
-            .container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 767px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-          }
