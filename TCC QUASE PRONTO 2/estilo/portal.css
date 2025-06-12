@@ -44,3 +44,17 @@ footer {
   padding: 30px 20px;
   font-size: 14px;
 }
+
+.social {
+  width: 24px;
+  margin: 0 5px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  color: white;
+}
+
+.social a{
+  color: white;
+} 
+
