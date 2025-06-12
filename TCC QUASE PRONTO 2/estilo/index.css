@@ -205,5 +205,9 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
-    color: white;
+
   }
+
+.social a{
+  color: white;
+} 
