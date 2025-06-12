@@ -34,3 +34,13 @@
   font-size: 28px;
   color: #f39800;
 }
+
+footer {
+  background-color: orange;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30px 20px;
+  font-size: 14px;
+}
