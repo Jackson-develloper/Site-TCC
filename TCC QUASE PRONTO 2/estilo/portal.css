@@ -11,23 +11,40 @@
   border-radius: 8px;
 }
 
+.causa{
+  text-align: center;
+  padding: 25px;
+}
 .contatos {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
   margin-top: 25px;
+  padding: 150px;
 }
 
+.central {
+  color: #f39800;
+}
+
+.atendente{
+  color: #f39800;
+}
+
+.instagram{
+  color: #f39800;
+}
 .contato-item {
-  display: flex;
+  display: block;
   align-items: center;
   gap: 10px;
   background-color: #fafafa;
   border-radius: 10px;
   padding: 10px 15px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 4px #f39800(0,0,0,0.05);
   min-width: 260px;
+  flex-direction: column
 }
 
 .icone {
