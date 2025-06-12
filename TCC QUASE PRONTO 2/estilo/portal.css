@@ -1,0 +1,36 @@
+.imagem-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.imagem-capa {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.contatos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 25px;
+}
+
+.contato-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #fafafa;
+  border-radius: 10px;
+  padding: 10px 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  min-width: 260px;
+}
+
+.icone {
+  font-size: 28px;
+  color: #f39800;
+}
