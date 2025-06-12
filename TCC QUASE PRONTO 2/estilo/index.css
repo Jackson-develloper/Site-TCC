@@ -2,10 +2,22 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
+<<<<<<< HEAD
+<<<<<<< HEAD
+    background-color:#ffffff;
+=======
+<<<<<<< HEAD
+    background-color: white;
+=======
+    background-color:#f0eeee;
+>>>>>>> 707d98facb62739ddc1dfcd48d7c02b81084ac6f
+>>>>>>> 2692fd4f1ca35962c52c83f8436105278016414a
+=======
     background-color: white;
 
     background-color: white;
 
+>>>>>>> d9545607b74fdd4b5024a43f552909c3df112dcc
     color: #333;
   }
  
@@ -193,6 +205,10 @@ body {
     margin: 10px;
   }
  
+
+.icon_insta{
+  width: 24px;
+}
   footer .social a img {
     width: 24px;
     margin: 0 5px;
