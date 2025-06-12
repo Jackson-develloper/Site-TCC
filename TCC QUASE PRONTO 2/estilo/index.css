@@ -2,12 +2,15 @@ body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fff;
+
+    background-color:#ffffff;
+
+
     color: #333;
   }
  
   header {
-    background: #fff;
+    background: #ffffff;
     padding: 10px 20px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
   }
@@ -190,7 +193,17 @@ body {
     margin: 10px;
   }
  
-  footer .social a img {
+
+.icon_insta{
+  width: 24px;
+  
+ 
+}
+   .social {
     width: 24px;
     margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    color: white;
   }

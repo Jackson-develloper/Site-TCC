@@ -1,9 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     background-color: #f4f4f4;
     color: #333;
   }
+  
+      
+  header {
+    text-align: center;
+    background: #fff;    padding: 10px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+
   
   .top-header {
     background-color: white;
