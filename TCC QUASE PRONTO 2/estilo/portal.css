@@ -5,10 +5,10 @@
 }
 
 .imagem-capa {
-  width: 100%;
-  max-width: 800px;
-  border-radius: 16px;
-  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 8px;
 }
 
 .contatos {
