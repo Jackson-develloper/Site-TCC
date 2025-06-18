@@ -49,11 +49,9 @@ body {
     font-weight: 600;
   }
   .Voltar{
-     padding: 8px 16px;
+    padding: 8px 16px;
     border-radius: 20px;
     font-weight: 600px;
-
-
   }
  
   .btn.doar {
@@ -101,34 +99,35 @@ body {
   .impacto {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap:70px;
     padding: 40px 20px;
   }
 
  /*categorias*/
  .imagem__crianca img {
-    width: 100%;
+    width: 170%;
     border-radius: 10px;
     margin-bottom: 10px;
     text-align: center;
-    max-width: 450px;
+    max-width: 180px;
   }
 
   .pessoas__carentes img {
-    width: 100%;
+    width: 170%;
     border-radius: 10px;
     margin-bottom: 10px;
     text-align: center;
-    max-width: 450px;
+    max-width: 180px;
   }
 
   .desastre__natural img {
-    width: 100%;
+    width: 170%;
     border-radius: 10px;
     margin-bottom: 10px;
     text-align: center;
-    max-width: 450px;
+    max-width: 180px;
   }
+
 .texto__complemento {
   display: flex;
   justify-content: center;

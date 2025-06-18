@@ -22,6 +22,33 @@ body {
     border-radius: 8px;
   }
   
+  .menu {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+ 
+  .menu li {
+    display: inline;
+  }
+ 
+  .menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+  }
+
+  .botao {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+  }
+
+  .botao.doar{
+    background-color: orange;
+    color: #fff;
+  }
+  
   .highlight {
     color: #ffa500;
   }
@@ -72,10 +99,37 @@ body {
   }
   
   footer {
-    text-align: center;
-    padding: 20px;
-    background: #ffa500;
+    background-color: orange;
     color: white;
-    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px 20px;
+    font-size: 14px;
   }
+ 
+  footer .info, footer .direito, footer .social {
+    flex: 1;
+    margin: 10px;
+  }
+ 
+
+.icon_insta{
+  width: 24px;
+  
+ 
+}
+   .social {
+    width: 24px;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+  }
+
+
+.social a{
+  color: white;
+} 
   

@@ -9,17 +9,32 @@ body {
       
   header {
     text-align: center;
-    background: #fff;    padding: 10px 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background: #fff;    
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-
+  .menu {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+  }
+ 
+  .menu li {
+    display: inline;
+  }
+ 
+  .menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+  }
   
   .top-header {
     background-color: white;
     padding: 20px;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1.rem;
     font-weight: bold;
   }
   
@@ -63,17 +78,37 @@ body {
   }
   
   footer {
-    background-color: #f39800;
+    background-color: orange;
     color: white;
-    text-align: center;
-    padding: 25px 15px;
-    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px 20px;
+    font-size: 14px;
   }
+ 
+  footer .info, footer .direito, footer .social {
+    flex: 1;
+    margin: 10px;
+  }
+ 
+
+.icon_insta{
+  width: 24px;
   
-  .social-icons img {
+ 
+}
+   .social {
     width: 24px;
-    height: 24px;
-    margin: 0 8px;
-    vertical-align: middle;
+    margin: 0 5px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
   }
+
+
+.social a{
+  color: white;
+} 
   

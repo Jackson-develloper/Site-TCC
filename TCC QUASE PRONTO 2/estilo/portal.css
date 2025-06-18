@@ -11,6 +11,21 @@
   border-radius: 8px;
 }
 
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.menu li {
+  display: inline;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
 .causa{
   text-align: center;
   padding: 25px;
@@ -62,16 +77,27 @@ footer {
   font-size: 14px;
 }
 
-.social {
+footer .info, footer .direito, footer .social {
+  flex: 1;
+  margin: 10px;
+}
+
+
+.icon_insta{
+width: 24px;
+
+
+}
+ .social {
   width: 24px;
   margin: 0 5px;
   display: flex;
   justify-content: center;
   gap: 10px;
-  color: white;
+
 }
 
-.social a{
-  color: white;
-} 
 
+.social a{
+color: white;
+} 
