@@ -103,7 +103,6 @@ body {
     justify-content: center;
     gap: 20px;
     padding: 40px 20px;
-    flex-wrap: wrap;
   }
 
  /*categorias*/
@@ -205,5 +204,11 @@ body {
     display: flex;
     justify-content: center;
     gap: 10px;
-    color: white;
+
   }
+
+
+.social a{
+  color: white;
+} 
+
