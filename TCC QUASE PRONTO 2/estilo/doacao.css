@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
@@ -63,11 +63,13 @@ body {
   }
   
   footer {
-    background-color: #f39800;
+    background-color: orange;
     color: white;
-    text-align: center;
-    padding: 25px 15px;
-    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px 20px;
+    font-size: 14px;
   }
   
   .social-icons img {
@@ -76,4 +78,17 @@ body {
     margin: 0 8px;
     vertical-align: middle;
   }
-  
+  .icone {
+    font-size: 28px;
+    color: #f39800;
+  }
+   
+  footer {
+    background-color: orange;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px 20px;
+    font-size: 14px;
+  }
