@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./estilo/realizar.css">
+  <link rel="stylesheet" href="./estilo/index.css">
+  <title>Doação</title>
+</head>
+<body>
+ <header>
+    <nav>   
+      <div class="logo"> Doe+
+      </div>
+      <ul class="menu">
+        <link><a href="./SobreNos.html">Sobre Nós</a></link>
+        <link><a href="./portal.html">Portal de Apoio</a></link>
+        <link><a href="./doacao.html" class="btn doar">Quero Ajudar</a></link>
+      
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-container">
+      <form class="donation-form">
+        <h2>Dados Pessoais</h2>
+        <input type="text" placeholder="Nome Completo" required>
+        <input type="email" placeholder="E-mail" required>
+        <input type="tel" placeholder="Celular">
+        <input type="text" placeholder="CPF">
+
+        <h3>Forma de Pagamento</h3>
+        <div class="tabs">
+          <button type="button" class="tab active" onclick="showTab('pix')">PIX</button>
+          <button type="button" class="tab" onclick="showTab('boleto')">Boleto Bancário</button>
+          <button type="button" class="tab" onclick="showTab('cartao')">Cartão de Crédito</button>
+        </div>
+      </form>
+
+      <div class="payment-methods">
+        <!-- PIX -->
+        <div id="pix" class="payment active">
+          <h3>Doar via PIX</h3>
+          <select>
+            <option>Selecione o banco</option>
+            <option>Itaú</option>
+            <option>Bradesco</option>
+          </select>
+          <input type="number" placeholder="Valor da doação">
+          <label><input type="checkbox"> Aceito receber recibo</label>
+          <button>Doar Agora</button>
+        </div>
+
+        <!-- Boleto -->
+        <div id="boleto" class="payment">
+          <h3>Doar com Boleto</h3>
+          <input type="text" placeholder="Endereço">
+          <input type="text" placeholder="Cidade">
+          <input type="text" placeholder="UF">
+          <input type="text" placeholder="CEP">
+          <input type="number" placeholder="Valor da doação">
+          <button>Doar Agora</button>
+        </div>
+
+        <!-- Cartão -->
+        <div id="cartao" class="payment">
+          <h3>Cartão de Crédito</h3>
+          <input type="text" placeholder="Nome no Cartão">
+          <input type="text" placeholder="Número do Cartão">
+          <input type="text" placeholder="Validade (MM/AA)">
+          <input type="text" placeholder="CVV">
+          <input type="number" placeholder="Valor da doação">
+          <button>Doar Agora</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('.payment').forEach(div => div.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(btn => btn.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>
