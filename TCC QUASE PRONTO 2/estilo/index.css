@@ -98,6 +98,7 @@ nav {
   cursor: pointer;
 }
 
+
 .impacto {
   display: flex;
   flex-wrap: wrap;
@@ -193,3 +194,98 @@ footer .info, footer .direito, footer .social {
   font-size: 20px;
 }
 
+
+.impacto {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.impacto img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.texto__complemento {
+  font-weight: 500;
+}
+
+.chamada {
+  background: #f2f2f2;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.chamada p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.depoimento {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  text-align: center;
+  flex-wrap: wrap;
+  background-color: #fff;
+}
+
+.depoimento .seta {
+  font-size: 24px;
+  cursor: pointer;
+  margin: 0 10px;
+  background: none;
+  border: none;
+  color: orange;
+}
+
+.depoimento .conteudo {
+  display: none;
+  max-width: 600px;
+  margin: 20px;
+}
+
+.depoimento .conteudo.ativo {
+  display: block;
+}
+
+.depoimento img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+footer {
+  background-color: orange;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30px 20px;
+  font-size: 14px;
+}
+
+footer .info, footer .direito, footer .social {
+  flex: 1;
+  margin: 10px;
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.social a {
+  color: white;
+  font-size: 20px;
+}

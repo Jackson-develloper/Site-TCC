@@ -84,7 +84,6 @@ footer {
   font-size: 20px;
   transition: color 0.3s ease;
 }
-
 .social a:hover {
   color: #ddd;
 }
@@ -111,3 +110,27 @@ footer {
 
 
 
+
+.social a:hover {
+  color: #ddd;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .contatos {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .contato-item {
+    width: 100%;
+    max-width: 90%;
+  }
+
+  footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+}
