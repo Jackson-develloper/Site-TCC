@@ -87,72 +87,77 @@
   </main>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      // Função para trocar as abas
-      function showTab(id, event) {
-        event.preventDefault();
-        document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
-        document.querySelectorAll('.payment').forEach(p => p.classList.remove('active'));
+  document.addEventListener('DOMContentLoaded', () => {
+    // Trocar abas
+    function showTab(id, event) {
+      event.preventDefault();
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.payment').forEach(p => p.classList.remove('active'));
 
-        event.currentTarget.classList.add('active');
-        document.getElementById(id).classList.add('active');
+      event.currentTarget.classList.add('active');
+      document.getElementById(id).classList.add('active');
+    }
+
+    window.showTab = showTab;
+
+    // Campos compartilhados
+    const emailInput = document.querySelector('form.donation-form input[type="email"]');
+
+    // Seção PIX
+    const pixSection = document.getElementById('pix');
+    const botaoDoarPix = pixSection.querySelector('button');
+    const valorPixInput = pixSection.querySelector('input[type="number"]');
+    const imgQR = document.getElementById('qr-code');
+    const inputPix = document.getElementById('pix-code');
+
+    botaoDoarPix.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const valor = parseFloat(valorPixInput.value);
+      const email = emailInput.value.trim();
+
+      if (isNaN(valor) || valor <= 0) {
+        alert('Por favor, insira um valor válido para a doação.');
+        return;
       }
 
-      window.showTab = showTab;
+      if (!email.includes('@')) {
+        alert('Por favor, insira um e-mail válido.');
+        return;
+      }
 
-      // Campos compartilhados
-      const emailInput = document.querySelector('form.donation-form input[type="email"]');
+      try {
+        const resp = await fetch('https://b6d9a2f893cb.ngrok-free.app/doar', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            valor: valor,
+            email: email,
+            descricao: "Doação via PIX"
+          })
+        });
 
-      // PIX
-      const pixSection = document.getElementById('pix');
-      const botaoDoarPix = pixSection.querySelector('button');
-      const valorPixInput = pixSection.querySelector('input[type="number"]');
-      const imgQR = document.getElementById('qr-code');
-      const inputPix = document.getElementById('pix-code');
-
-      botaoDoarPix.addEventListener('click', async (e) => {
-        e.preventDefault();
-        const valor = parseFloat(valorPixInput.value);
-        const email = emailInput.value.trim();
-
-        if (isNaN(valor) || valor <= 0) {
-          alert('Por favor, insira um valor válido para a doação.');
-          return;
-        }
-        if (!email.includes('@')) {
-          alert('Por favor, insira um e-mail válido.');
+        if (!resp.ok) {
+          const errorText = await resp.text();
+          alert(`Erro ao gerar cobrança PIX: ${resp.status} - ${errorText}`);
           return;
         }
 
-        try {
-          const resp = await fetch('http://localhost:8000/doar', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ valor, email, descricao: "Doação via PIX" })
-          });
+        const dados = await resp.json();
 
-          if (!resp.ok) {
-            const errorText = await resp.text();
-            alert(`Erro ao gerar cobrança PIX: ${resp.status} - ${errorText}`);
-            return;
-          }
+        if (dados.qr_image_base64 && dados.qr_code) {
+          imgQR.src = `data:image/png;base64,${dados.qr_image_base64}`;
+          imgQR.style.display = 'block';
 
-          const dados = await resp.json();
-
-          if (dados.qr_image_base64 && dados.qr_code) {
-            imgQR.src = `data:image/png;base64,${dados.qr_image_base64}`;
-            imgQR.style.display = 'block';
-
-            inputPix.value = dados.qr_code;
-            inputPix.style.display = 'block';
-          } else {
-            alert('Erro: dados do QR Code ausentes na resposta.');
-          }
-        } catch (err) {
-          alert('Erro na comunicação com o servidor: ' + err.message);
+          inputPix.value = dados.qr_code;
+          inputPix.style.display = 'block';
+        } else {
+          alert('Erro: dados do QR Code ausentes na resposta.');
         }
-      });
+      } catch (err) {
+        alert('Erro na comunicação com o servidor: ' + err.message);
+      }
     });
-  </script>
+  });
+</script>
 </body>
 </html>
