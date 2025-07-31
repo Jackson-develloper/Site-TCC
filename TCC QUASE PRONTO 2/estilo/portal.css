@@ -1,3 +1,4 @@
+/* Container da imagem principal */
 .imagem-container {
   display: flex;
   justify-content: center;
@@ -7,7 +8,6 @@
 .imagem-capa {
   max-width: 100%;
   height: auto;
-  margin-top: 20px;
   border-radius: 8px;
 }
 
@@ -30,43 +30,51 @@
   text-align: center;
   padding: 25px;
 }
+
+/* Contatos (Central, Atendente, Instagram) */
 .contatos {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
   margin-top: 25px;
-  padding: 150px;
+  padding: 40px 20px; /* reduzido de 150px para não quebrar layout */
 }
 
-.central {
+/* Estilo dos títulos de cada contato */
+.central,
+.atendente,
+.instagram {
   color: #f39800;
+  font-weight: bold;
 }
 
-.atendente{
-  color: #f39800;
-}
-
-.instagram{
-  color: #f39800;
-}
+/* Blocos de contato individual */
 .contato-item {
-  display: block;
+  display: flex;
   align-items: center;
-  gap: 10px;
   background-color: #fafafa;
   border-radius: 10px;
-  padding: 10px 15px;
-  box-shadow: 0 2px 4px #f39800(0,0,0,0.05);
+  padding: 15px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* corrigido o erro de sintaxe */
   min-width: 260px;
-  flex-direction: column
+  max-width: 320px;
+  flex-direction: row;
+  gap: 15px;
+  transition: transform 0.2s ease;
 }
 
+.contato-item:hover {
+  transform: scale(1.03);
+}
+
+/* Ícones dentro dos contatos */
 .icone {
   font-size: 28px;
   color: #f39800;
 }
- 
+
+/* Rodapé */
 footer {
   background-color: orange;
   color: white;
@@ -75,6 +83,7 @@ footer {
   justify-content: space-between;
   padding: 30px 20px;
   font-size: 14px;
+  gap: 20px;
 }
 
 footer .info, footer .direito, footer .social {

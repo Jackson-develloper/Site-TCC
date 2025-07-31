@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="./Páginahome/_SalveVidas-removebg-preview.png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./estilo/index.css" />
+  <link rel="stylesheet" href="./estilo/realizar.css" />
+  <title>Doação</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Doe+</div>
+      <ul class="menu">
+        <li><a href="./SobreNos.html">Sobre Nós</a></li>
+        <li><a href="./portal.html">Portal de Apoio</a></li>
+        <li><a href="./doacao.html" class="btn doar">Quero Ajudar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-container">
+      <form class="donation-form">
+        <h2>Dados Pessoais</h2>
+        <input type="text" placeholder="Nome Completo" required>
+        <input type="email" placeholder="E-mail" required>
+        <input type="tel" placeholder="Celular">
+        <input type="text" placeholder="CPF">
+
+        <h3>Forma de Pagamento</h3>
+        <div class="tabs">
+          <button type="button" class="tab active" onclick="showTab('pix', event)">PIX</button>
+          <button type="button" class="tab" onclick="showTab('boleto', event)">Boleto Bancário</button>
+          <button type="button" class="tab" onclick="showTab('cartao', event)">Cartão de Crédito</button>
+        </div>
+      </form>
+
+      <div class="payment-methods">
+        <!-- PIX -->
+        <div id="pix" class="payment active">
+          <h3>Doar via PIX</h3>
+          <select>
+            <option>Selecione o banco</option>
+            <option>Itaú</option>
+            <option>Bradesco</option>
+          </select>
+          <input type="number" placeholder="Valor da doação">
+          <label><input type="checkbox"> Aceito receber recibo</label>
+          <button>Doar Agora</button>
+
+          <!-- Resultado QR Code -->
+          <div id="resultado-pix" style="margin-top: 20px;">
+            <img id="qr-code" width="250" style="display: none;" alt="QR Code Pix" />
+            <input id="pix-code" readonly style="width: 100%; display: none; margin-top: 10px;" />
+          </div>
+        </div>
+
+        <!-- Boleto -->
+        <div id="boleto" class="payment">
+          <h3>Doar com Boleto</h3>
+          <input type="text" placeholder="Endereço">
+          <input type="text" placeholder="Cidade">
+          <input type="text" placeholder="UF">
+          <input type="text" placeholder="CEP">
+          <input type="number" placeholder="Valor da doação">
+          <button>Doar Agora</button>
+        </div>
+
+        <!-- Cartão -->
+        <div id="cartao" class="payment">
+          <h3>Cartão de Crédito</h3>
+          <input type="text" placeholder="Nome no Cartão">
+          <input type="text" placeholder="Número do Cartão">
+          <input type="text" placeholder="Validade (MM/AA)">
+          <input type="text" placeholder="CVV">
+          <input type="number" placeholder="Valor da doação">
+          <button>Doar Agora</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // Trocar abas
+    function showTab(id, event) {
+      event.preventDefault();
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.payment').forEach(p => p.classList.remove('active'));
+
+      event.currentTarget.classList.add('active');
+      document.getElementById(id).classList.add('active');
+    }
+
+    window.showTab = showTab;
+
+    // Campos compartilhados
+    const emailInput = document.querySelector('form.donation-form input[type="email"]');
+
+    // Seção PIX
+    const pixSection = document.getElementById('pix');
+    const botaoDoarPix = pixSection.querySelector('button');
+    const valorPixInput = pixSection.querySelector('input[type="number"]');
+    const imgQR = document.getElementById('qr-code');
+    const inputPix = document.getElementById('pix-code');
+
+    botaoDoarPix.addEventListener('click', async (e) => {
+      e.preventDefault();
+      const valor = parseFloat(valorPixInput.value);
+      const email = emailInput.value.trim();
+
+      if (isNaN(valor) || valor <= 0) {
+        alert('Por favor, insira um valor válido para a doação.');
+        return;
+      }
+
+      if (!email.includes('@')) {
+        alert('Por favor, insira um e-mail válido.');
+        return;
+      }
+
+      try {
+        const resp = await fetch('https://b6d9a2f893cb.ngrok-free.app/doar', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            valor: valor,
+            email: email,
+            descricao: "Doação via PIX"
+          })
+        });
+
+        if (!resp.ok) {
+          const errorText = await resp.text();
+          alert(`Erro ao gerar cobrança PIX: ${resp.status} - ${errorText}`);
+          return;
+        }
+
+        const dados = await resp.json();
+
+        if (dados.qr_image_base64 && dados.qr_code) {
+          imgQR.src = `data:image/png;base64,${dados.qr_image_base64}`;
+          imgQR.style.display = 'block';
+
+          inputPix.value = dados.qr_code;
+          inputPix.style.display = 'block';
+        } else {
+          alert('Erro: dados do QR Code ausentes na resposta.');
+        }
+      } catch (err) {
+        alert('Erro na comunicação com o servidor: ' + err.message);
+      }
+    });
+  });
+</script>
+</body>
+</html>
