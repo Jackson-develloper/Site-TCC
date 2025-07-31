@@ -12,8 +12,22 @@
   border-radius: 8px;
 }
 
-/* Texto geral da seção */
-.causa {
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.menu li {
+  display: inline;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+.causa{
   text-align: center;
   padding: 25px;
 }
@@ -73,65 +87,27 @@ footer {
   gap: 20px;
 }
 
-/* Ícones sociais */
-.social {
+footer .info, footer .direito, footer .social {
+  flex: 1;
+  margin: 10px;
+}
+
+
+.icon_insta{
+width: 24px;
+
+
+}
+ .social {
+  width: 24px;
+  margin: 0 5px;
   display: flex;
   justify-content: center;
-  gap: 15px;
-}
+  gap: 10px;
 
-.social a {
-  color: white;
-  font-size: 20px;
-  transition: color 0.3s ease;
-}
-.social a:hover {
-  color: #ddd;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .contatos {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-
-  .contato-item {
-    width: 100%;
-    max-width: 90%;
-  }
-
-  footer {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
 }
 
 
-
-
-.social a:hover {
-  color: #ddd;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .contatos {
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-
-  .contato-item {
-    width: 100%;
-    max-width: 90%;
-  }
-
-  footer {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-}
+.social a{
+color: white;
+} 
