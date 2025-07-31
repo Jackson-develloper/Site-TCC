@@ -115,6 +115,7 @@ nav {
 
 .texto__complemento {
   font-weight: 500;
+  margin-top: -58px;
 }
 
 .chamada {
@@ -209,9 +210,6 @@ footer .info, footer .direito, footer .social {
   margin-bottom: 10px;
 }
 
-.texto__complemento {
-  font-weight: 500;
-}
 
 .chamada {
   background: #f2f2f2;
