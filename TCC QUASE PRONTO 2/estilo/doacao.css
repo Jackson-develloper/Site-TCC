@@ -43,7 +43,7 @@ header {
 .botoes {
   margin-top: 15px;
   display: flex;
-  justify-content: center; /* Centraliza botões horizontalmente */
+  justify-content: center; /* Centraliza botões na horizontal */
   flex-wrap: wrap; /* Permite quebra de linha em telas menores */
   gap: 10px; /* Espaçamento entre botões */
 }
