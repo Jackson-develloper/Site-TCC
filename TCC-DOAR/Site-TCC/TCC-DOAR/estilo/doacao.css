@@ -9,12 +9,22 @@ header {
   text-align: center;
   background: #fff;
   padding: 10px 20px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.titulo_doar {
+  text-align: center;
 }
 
 .top-header {
-  background-color: white;
-  padding: 20px;
+  background-color:white;
+  padding: 10px;
   text-align: center;
   font-size: 1.2rem;
   font-weight: bold;
@@ -25,7 +35,6 @@ header {
   margin: auto;
   padding: 20px;
 }
-
 
 .causa {
   background-color: white;
